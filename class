@@ -7,3 +7,7 @@
         returnTime = returnTime.replace(' ', 'T');
         return returnTime;
     }
+    
+     User loggedinUser = UtilityClass.getLoggedInUser();
+                sl.start_time__c = AccniteUtility.convertTimeZoneUserLocale(Integer.valueOf(loggedInUser.TimeZoneOffset__C),sl.start_time__c);
+                sl.end_time__c = AccniteUtility.convertTimeZoneUserLocale(Integer.valueOf(loggedInUser.TimeZoneOffset__C),sl.end_time__c);
